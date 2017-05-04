@@ -28,6 +28,5 @@ test/coverage/*
 .sass-cache
 
 dist/*
-es5/*
 
 .idea/
