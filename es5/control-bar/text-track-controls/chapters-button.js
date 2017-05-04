@@ -89,6 +89,7 @@ var ChaptersButton = function (_TextTrackButton) {
       this.setTrack(this.findChaptersTrack());
     }
     _TextTrackButton.prototype.update.call(this);
+    this.trigger('change');
   };
 
   /**
@@ -121,7 +122,6 @@ var ChaptersButton = function (_TextTrackButton) {
     }
 
     this.track_ = track;
-    this.trigger('change');
 
     // here this.track_ refers to the new track instance
     if (this.track_) {

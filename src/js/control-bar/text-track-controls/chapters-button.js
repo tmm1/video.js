@@ -57,6 +57,7 @@ class ChaptersButton extends TextTrackButton {
       this.setTrack(this.findChaptersTrack());
     }
     super.update();
+    this.trigger('change');
   }
 
   /**
@@ -87,7 +88,6 @@ class ChaptersButton extends TextTrackButton {
     }
 
     this.track_ = track;
-    this.trigger('change');
 
     // here this.track_ refers to the new track instance
     if (this.track_) {
