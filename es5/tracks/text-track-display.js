@@ -281,6 +281,7 @@ var TextTrackDisplay = function (_Component) {
     for (var _i2 = 0; _i2 < track.activeCues.length; _i2++) {
       cues.push(track.activeCues[_i2]);
     }
+    cues.reverse();
 
     _window2['default'].WebVTT.processCues(_window2['default'], cues, this.el_);
 

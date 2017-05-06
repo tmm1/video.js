@@ -247,6 +247,7 @@ class TextTrackDisplay extends Component {
     for (let i = 0; i < track.activeCues.length; i++) {
       cues.push(track.activeCues[i]);
     }
+    cues.reverse();
 
     window.WebVTT.processCues(window, cues, this.el_);
 
