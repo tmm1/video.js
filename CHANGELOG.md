@@ -1,3 +1,67 @@
+<a name="5.20.4"></a>
+## [5.20.4](https://github.com/videojs/video.js/compare/v5.20.3...v5.20.4) (2017-10-02)
+
+### Bug Fixes
+
+* Make boolean attributes set and check both the associated property and the attribute ([#4631](https://github.com/videojs/video.js/issues/4631)) ([0f8de52](https://github.com/videojs/video.js/commit/0f8de52)), closes [#4351](https://github.com/videojs/video.js/issues/4351)
+
+<a name="5.20.3"></a>
+## [5.20.3](https://github.com/videojs/video.js/compare/v5.20.2...v5.20.3) (2017-08-16)
+
+### Bug Fixes
+
+* tracks are disabled and cuepoints are cleared in iOS native player ([#4569](https://github.com/videojs/video.js/issues/4569)) ([424d021](https://github.com/videojs/video.js/commit/424d021))
+
+### Chores
+
+* **CHANGELOG:** update CHANGELOG for 5.20.2 ([#4529](https://github.com/videojs/video.js/issues/4529)) ([935ec1e](https://github.com/videojs/video.js/commit/935ec1e))
+
+<a name="5.20.2"></a>
+## [5.20.2](https://github.com/videojs/video.js/compare/v5.20.1...v5.20.2) (2017-07-26)
+
+### Bug Fixes
+
+* adjust volume ranges so muted(true) and vol=0 do not use the same icons ([#4425](https://github.com/videojs/video.js/issues/4425)) ([b314268](https://github.com/videojs/video.js/commit/b314268))
+* only change focus from BPB if not a mouse click ([#4523](https://github.com/videojs/video.js/issues/4523)) ([d90c945](https://github.com/videojs/video.js/commit/d90c945))
+* Only update text track mode if changed ([#4368](https://github.com/videojs/video.js/issues/4368)) ([a1763dc](https://github.com/videojs/video.js/commit/a1763dc))
+* player.duration() should return NaN if duration is not known ([#4456](https://github.com/videojs/video.js/issues/4456)) ([2576eda](https://github.com/videojs/video.js/commit/2576eda))
+* Safari picture-in-picture triggers fullscreenchange ([#4442](https://github.com/videojs/video.js/issues/4442)) ([c17c003](https://github.com/videojs/video.js/commit/c17c003))
+* Use passive event listeners for touchstart/touchmove ([#4445](https://github.com/videojs/video.js/issues/4445)) ([8599c8e](https://github.com/videojs/video.js/commit/8599c8e)), closes [#4432](https://github.com/videojs/video.js/issues/4432)
+
+### Chores
+
+* add a release script to makes things easier ([#4517](https://github.com/videojs/video.js/issues/4517)) ([9ca9989](https://github.com/videojs/video.js/commit/9ca9989))
+* move imports up so bundlers wont trip up ([#4363](https://github.com/videojs/video.js/issues/4363)) ([0d725df](https://github.com/videojs/video.js/commit/0d725df))
+* **package:** update to swf 5.4.1 ([#4516](https://github.com/videojs/video.js/issues/4516)) ([a145dd2](https://github.com/videojs/video.js/commit/a145dd2))
+* **package:** update videojs-vtt.js to 0.12.4 ([#4364](https://github.com/videojs/video.js/issues/4364)) ([3f7e215](https://github.com/videojs/video.js/commit/3f7e215))
+
+<a name="5.20.1"></a>
+## [5.20.1](https://github.com/videojs/video.js/compare/v5.20.0...v5.20.1) (2017-05-15)
+
+### Bug Fixes
+
+* only disable user-selection on sliders ([#4355](https://github.com/videojs/video.js/issues/4355)) ([0d60720](https://github.com/videojs/video.js/commit/0d60720))
+* prevent dupe events on enabled ClickableComponents ([#4357](https://github.com/videojs/video.js/issues/4357)) ([3faea9f](https://github.com/videojs/video.js/commit/3faea9f))
+
+<a name="5.20.0"></a>
+# [5.20.0](https://github.com/videojs/video.js/compare/v5.19.2...v5.20.0) (2017-05-11)
+
+### Features
+
+* add 'playsinline' player option ([#4325](https://github.com/videojs/video.js/issues/4325)) ([946f84b](https://github.com/videojs/video.js/commit/946f84b))
+* Add a version class to the player ([#4335](https://github.com/videojs/video.js/issues/4335)) ([b855bfb](https://github.com/videojs/video.js/commit/b855bfb))
+* Add getVideoPlaybackQuality API ([#4286](https://github.com/videojs/video.js/issues/4286)) ([c970474](https://github.com/videojs/video.js/commit/c970474))
+* remove playbackRate blacklist for recent Android Chrome ([#4336](https://github.com/videojs/video.js/issues/4336)) ([3fe22e9](https://github.com/videojs/video.js/commit/3fe22e9))
+
+### Chores
+
+* add slack travis notifications ([#4339](https://github.com/videojs/video.js/issues/4339)) ([ab110ff](https://github.com/videojs/video.js/commit/ab110ff))
+* **package:** pin karma to 1.3.0 for IE8 support ([#4340](https://github.com/videojs/video.js/issues/4340)) ([6cf7327](https://github.com/videojs/video.js/commit/6cf7327))
+
+### Tests
+
+* fix playsinline test for IE8 ([#4347](https://github.com/videojs/video.js/issues/4347)) ([823f6c7](https://github.com/videojs/video.js/commit/823f6c7))
+
 <a name="5.19.2"></a>
 ## [5.19.2](https://github.com/videojs/video.js/compare/v5.19.1...v5.19.2) (2017-04-13)
 

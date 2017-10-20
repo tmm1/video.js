@@ -830,6 +830,35 @@ QUnit.test('should restore attributes from the original video tag when creating 
   assert.equal(el.getAttribute('webkit-playsinline'), '', 'webkit-playsinline attribute was set properly');
 });
 
+if (Html5.isSupported()) {
+  QUnit.test('player.playsinline() should be able to get/set playsinline attribute', function(assert) {
+    assert.expect(5);
+
+    const video = document.createElement('video');
+    const player = TestHelpers.makePlayer({techOrder: ['html5']}, video);
+
+    // test setter
+    assert.ok(!player.tech_.el().hasAttribute('playsinline'), 'playsinline has not yet been added');
+
+    player.playsinline(true);
+
+    assert.ok(player.tech_.el().hasAttribute('playsinline'), 'playsinline attribute added');
+
+    player.playsinline(false);
+
+    assert.ok(!player.tech_.el().hasAttribute('playsinline'), 'playsinline attribute removed');
+
+    // test getter
+    player.tech_.el().setAttribute('playsinline', 'playsinline');
+
+    assert.ok(player.playsinline(), 'correctly detects playsinline attribute');
+
+    player.tech_.el().removeAttribute('playsinline');
+
+    assert.ok(!player.playsinline(), 'correctly detects absence of playsinline attribute');
+  });
+}
+
 QUnit.test('if tag exists and movingMediaElementInDOM, re-use the tag', function(assert) {
   // simulate attributes stored from the original tag
   const tag = Dom.createEl('video');
@@ -1386,4 +1415,41 @@ QUnit.test('should not allow to register custom player when any player has been 
 
   // reset the Player to the original value;
   videojs.registerComponent('Player', Player);
+});
+
+QUnit.test('should add a class with major version', function(assert) {
+  const majorVersion = require('../../package.json').version.split('.')[0];
+  const player = TestHelpers.makePlayer();
+
+  assert.ok(player.hasClass('vjs-v' + majorVersion), 'the version class should be added to the player');
+
+  player.dispose();
+});
+
+QUnit.test('player.duration() returns NaN if player.cache_.duration is undefined', function(assert) {
+  const player = TestHelpers.makePlayer();
+
+  player.cache_.duration = undefined;
+  assert.ok(Number.isNaN(player.duration()), 'returned NaN for unkown duration');
+});
+
+QUnit.test('player.duration() returns player.cache_.duration if it is defined', function(assert) {
+  const player = TestHelpers.makePlayer();
+
+  player.cache_.duration = 200;
+  assert.equal(player.duration(), 200, 'returned correct integer duration');
+  player.cache_.duration = 942;
+  assert.equal(player.duration(), 942, 'returned correct integer duration');
+});
+
+QUnit.test('player.duration() sets the value of player.cache_.duration', function(assert) {
+  const player = TestHelpers.makePlayer();
+
+  // set an arbitrary initial cached duration value for testing the setter functionality
+  player.cache_.duration = 1;
+
+  player.duration(NaN);
+  assert.ok(Number.isNaN(player.duration()), 'duration() set and get NaN duration value');
+  player.duration(200);
+  assert.equal(player.duration(), 200, 'duration() set and get integer duration value');
 });
