@@ -1,7 +1,7 @@
 {
   "name": "video.js",
   "description": "An HTML5 and Flash video player with a common API and skin for both.",
-  "version": "5.20.4",
+  "version": "5.20.5",
   "main": "./es5/video.js",
   "style": "./dist/video-js.css",
   "copyright": "Copyright Brightcove, Inc. <https://www.brightcove.com/>",
@@ -42,7 +42,7 @@
     "videojs-font": "2.0.0",
     "videojs-ie8": "1.1.2",
     "videojs-swf": "5.4.1",
-    "videojs-vtt.js": "0.12.4",
+    "videojs-vtt.js": "0.12.6",
     "xhr": "2.2.2"
   },
   "devDependencies": {
